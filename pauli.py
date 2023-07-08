@@ -33,8 +33,5 @@ tzsz = np.kron(sz, sz)
 
 # Majorana transformation
 U_M = np.array(
-    [[1, 0, 0, -1], 
-     [-1j, 0, 0, -1j], 
-     [0, 1, 1, 0], 
-     [0, -1j, 1j, 0]]
+    [[1, 0, 0, -1], [-1j, 0, 0, -1j], [0, 1, 1, 0], [0, -1j, 1j, 0]]
 ) / np.sqrt(2)
