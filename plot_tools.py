@@ -1,11 +1,25 @@
-import numpy as np
+from colorsys import hls_to_rgb
+from typing import Optional, Tuple, Type, Union
+
 import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
 from matplotlib.image import AxesImage
-from colorsys import hls_to_rgb
-from typing import Optional, Tuple, Union, Type
 from numpy.typing import ArrayLike
+
+
+def add_tl_label(ax, text):
+    ax.text(
+        0.02,
+        0.98,
+        text,
+        horizontalalignment="left",
+        verticalalignment="top",
+        transform=ax.transAxes,
+        bbox=dict(facecolor=[1, 1, 1, 0.90], edgecolor="none", pad=0.25),
+    )
+
 
 def colorize(z: ArrayLike) -> ArrayLike:
     """
@@ -34,7 +48,7 @@ def colorize(z: ArrayLike) -> ArrayLike:
     idx = ~(np.isinf(z) + np.isnan(z))
     phase = (np.angle(z[idx]) + np.pi) / (2 * np.pi)
     phase = (phase + 0.5) % 1.0
-    amplitude = 1.0 - 1.0 / (1.0 + abs(z[idx])**0.3)
+    amplitude = 1.0 - 1.0 / (1.0 + abs(z[idx]) ** 0.3)
 
     # Convert phase and amplitude to RGB using HLS color space
     color = [hls_to_rgb(p, a, 0.8) for p, a in zip(phase, amplitude)]
@@ -42,7 +56,10 @@ def colorize(z: ArrayLike) -> ArrayLike:
 
     return c
 
-def complex_plot(x: ArrayLike, y: ArrayLike, z: ArrayLike, ax: Optional[Axes] = None) -> Tuple[Figure, Axes, AxesImage]:
+
+def complex_plot(
+    x: ArrayLike, y: ArrayLike, z: ArrayLike, ax: Optional[Axes] = None
+) -> Tuple[Figure, Axes, AxesImage]:
     """
     Plot the complex field represented by z.
 
@@ -66,13 +83,16 @@ def complex_plot(x: ArrayLike, y: ArrayLike, z: ArrayLike, ax: Optional[Axes] = 
         fig = ax.figure
 
     # Plot the complex field
-    img = ax.imshow(colorize(z), extent=(x.min(), x.max(), y.min(), y.max()), interpolation="bilinear")
+    img = ax.imshow(
+        colorize(z),
+        extent=(x.min(), x.max(), y.min(), y.max()),
+        interpolation="bilinear",
+    )
 
     return fig, ax, img
 
 
 if __name__ == "__main__":
-
     # Example usage
     x = np.linspace(-1, 1, 100)
     y = np.linspace(-1, 1, 100)
