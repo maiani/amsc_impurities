@@ -3,13 +3,33 @@ import matplotlib.path as mpath
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.linalg as la
+import scipy.sparse as sp
 import scipy.sparse.linalg as sla
 from matplotlib.collections import LineCollection
 from scipy.optimize import linear_sum_assignment
 import numpy as np
 from scipy.interpolate import interp1d
 from typing import List, Optional, Sequence, Tuple, Union
+import mumps
 
+def sparse_diag(matrix, k, sigma, **kwargs):
+    """Call sla.eigsh with mumps support.
+
+    See scipy.sparse.linalg.eigsh for documentation.
+    """
+    class LuInv(sla.LinearOperator):
+        def __init__(self, A):
+            inst = mumps.Context()
+            inst.analyze(A, ordering='pord')
+            inst.factor(A)
+            self.solve = inst.solve
+            sla.LinearOperator.__init__(self, A.dtype, A.shape)
+
+        def _matvec(self, x):
+            return self.solve(x.astype(self.dtype))
+
+    opinv = LuInv(matrix - sigma * sp.identity(matrix.shape[0]))
+    return sla.eigsh(matrix, k, sigma=sigma, OPinv=opinv, **kwargs)
 
 def thermal_broadening(e_ax: np.ndarray, y: np.ndarray, T: float) -> np.ndarray:
     """

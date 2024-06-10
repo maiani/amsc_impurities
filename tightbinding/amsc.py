@@ -170,3 +170,216 @@ def impurity_system(
         ).conj()
 
     return syst, lat
+
+
+def generate_intial_Delta(x, y, Delta_init, vortex_positions, windings, l_core):
+    x_ax = x[0]
+    y_ax = y[:, 0]
+    
+    Psi_n = Delta_init + 0j * x
+
+    if l_core != 0:
+        for n, pos in enumerate(vortex_positions):
+            xp, yp = pos
+            Psi_n *= (1 - np.exp(-np.sqrt((x - xp) ** 2 + (y - yp) ** 2) / l_core)) * np.exp(1j * windings[n] * np.arctan2(y-yp, x-xp))
+
+    # Create the new interpolation functions
+    Delta_interp = RegularGridInterpolator((y_ax, x_ax), abs(Psi_n))
+    theta_interp = RegularGridInterpolator((y_ax, x_ax), np.angle(Psi_n))
+
+    # Update the order parameter
+    Delta = lambda x, y: Delta_interp((y, x))
+    theta = lambda x, y: theta_interp((y, x))
+
+    return Delta, theta
+
+
+def setup_gaussian_impurities(
+    x,
+    y,
+    mu,
+    hx0,
+    hy0,
+    hz0,
+    impurity_positions,
+    impurity_sizes,
+    impurity_eccentricities,
+    impurity_orientations,
+    V_imp,
+    hx_imp,
+    hy_imp,
+    hz_imp,
+):
+    x_ax = x[0]
+    y_ax = y[:, 0]
+
+    # Calculation of the A matrix for each Gaussian potential
+    A_matrices = []
+    for sigma, e, alpha in zip(
+        impurity_sizes, impurity_eccentricities, impurity_orientations
+    ):
+        R = np.array([[np.cos(alpha), -np.sin(alpha)], [np.sin(alpha), np.cos(alpha)]])
+        Sigma = (
+            sigma**2 / 2 * np.array([[np.sqrt(1 - e**2), 0], [0, np.sqrt(1 + e**2)]])
+        )
+        Sigma_prime = R @ Sigma @ R.T
+        A = np.linalg.inv(Sigma_prime) / 2
+        A_matrices.append(A)
+
+    # Fields definition
+    def V(x, y):
+        V = -mu + 0 * x
+        for i, pos in enumerate(impurity_positions):
+            xp, yp = pos
+            r = np.array([x - xp, y - yp])
+            V += V_imp[i] * np.exp(
+                -np.einsum("aij, ab, bij -> ij", r, A_matrices[i], r)
+            )  # / (2 * np.pi) * np.sqrt(la.det(2*A_matrices[i]))
+        return V
+
+    def hx(x, y):
+        hx = hx0 + 0 * x
+        for i, pos in enumerate(impurity_positions):
+            xp, yp = pos
+            r = np.array([x - xp, y - yp])
+            hx += hx_imp[i] * np.exp(
+                -np.einsum("aij, ab, bij -> ij", r, A_matrices[i], r)
+            )  # / (2 * np.pi) * np.sqrt(la.det(2*A_matrices[i]))
+        return hx
+
+    def hy(x, y):
+        hy = hy0 + 0 * x
+        for i, pos in enumerate(impurity_positions):
+            xp, yp = pos
+            r = np.array([x - xp, y - yp])
+            hy += hy_imp[i] * np.exp(
+                -np.einsum("aij, ab, bij -> ij", r, A_matrices[i], r)
+            )  # / (2 * np.pi) * np.sqrt(la.det(2*A_matrices[i]))
+        return hy
+
+    def hz(x, y):
+        hz = hz0 + 0 * x
+        for i, pos in enumerate(impurity_positions):
+            xp, yp = pos
+            r = np.array([x - xp, y - yp])
+            hz += hz_imp[i] * np.exp(
+                -np.einsum("aij, ab, bij -> ij", r, A_matrices[i], r)
+            )  # / (2 * np.pi) * np.sqrt(la.det(2*A_matrices[i]))
+        return hz
+
+    # Create the new interpolation functions
+    V_interp = RegularGridInterpolator((y_ax, x_ax), V(x, y))
+    hx_interp = RegularGridInterpolator((y_ax, x_ax), hx(x, y))
+    hy_interp = RegularGridInterpolator((y_ax, x_ax), hy(x, y))
+    hz_interp = RegularGridInterpolator((y_ax, x_ax), hz(x, y))
+
+    V = lambda x, y: V_interp((y, x))
+    hx = lambda x, y: hx_interp((y, x))
+    hy = lambda x, y: hy_interp((y, x))
+    hz = lambda x, y: hz_interp((y, x))
+
+    return V, hx, hy, hz
+
+def setup_Coulomb_impurities(
+    x,
+    y,
+    mu,
+    impurity_positions,
+    V_imp,
+    screening_length
+    ):
+
+    x_ax = x[0]
+    y_ax = y[:, 0]
+
+    # Fields definition
+    def V(x, y):
+        Vf = -mu + 0 * x
+        
+        for i, pos in enumerate(impurity_positions):
+            xp, yp = pos
+            r = np.array([x - xp, y - yp])
+            r_magnitude = np.sqrt(r[0]**2 + r[1]**2)
+            Vf += V_imp[i] * np.exp(-r_magnitude / screening_length) / np.sqrt(r_magnitude**2 + 1)
+        return Vf
+
+    # Create the potential grid
+    V_grid = V(x, y)
+
+    # Create the new interpolation function
+    V_interp = RegularGridInterpolator((y_ax, x_ax), V_grid)
+    V_func = lambda x, y: V_interp((y, x))
+
+    return V_func
+
+
+def setup_spin_impurities(
+    x,
+    y,
+    hx0,
+    hy0,
+    hz0,
+    impurity_positions,
+    impurity_sizes,
+    impurity_eccentricities,
+    impurity_orientations,
+    hx_imp,
+    hy_imp,
+    hz_imp,
+):
+    x_ax = x[0]
+    y_ax = y[:, 0]
+
+    # Calculation of the A matrix for each Gaussian potential
+    A_matrices = []
+    for sigma, e, alpha in zip(
+        impurity_sizes, impurity_eccentricities, impurity_orientations
+    ):
+        R = np.array([[np.cos(alpha), -np.sin(alpha)], [np.sin(alpha), np.cos(alpha)]])
+        Sigma = (
+            sigma**2 / 2 * np.array([[np.sqrt(1 - e**2), 0], [0, np.sqrt(1 + e**2)]])
+        )
+        Sigma_prime = R @ Sigma @ R.T
+        A = np.linalg.inv(Sigma_prime) / 2
+        A_matrices.append(A)
+
+    def hx(x, y):
+        hx = hx0 + 0 * x
+        for i, pos in enumerate(impurity_positions):
+            xp, yp = pos
+            r = np.array([x - xp, y - yp])
+            hx += hx_imp[i] * np.exp(
+                -np.einsum("aij, ab, bij -> ij", r, A_matrices[i], r)
+            )  # / (2 * np.pi) * np.sqrt(la.det(2*A_matrices[i]))
+        return hx
+
+    def hy(x, y):
+        hy = hy0 + 0 * x
+        for i, pos in enumerate(impurity_positions):
+            xp, yp = pos
+            r = np.array([x - xp, y - yp])
+            hy += hy_imp[i] * np.exp(
+                -np.einsum("aij, ab, bij -> ij", r, A_matrices[i], r)
+            )  # / (2 * np.pi) * np.sqrt(la.det(2*A_matrices[i]))
+        return hy
+
+    def hz(x, y):
+        hz = hz0 + 0 * x
+        for i, pos in enumerate(impurity_positions):
+            xp, yp = pos
+            r = np.array([x - xp, y - yp])
+            hz += hz_imp[i] * np.exp(
+                -np.einsum("aij, ab, bij -> ij", r, A_matrices[i], r)
+            )  # / (2 * np.pi) * np.sqrt(la.det(2*A_matrices[i]))
+        return hz
+
+    # Create the new interpolation functions
+    hx_interp = RegularGridInterpolator((y_ax, x_ax), hx(x, y))
+    hy_interp = RegularGridInterpolator((y_ax, x_ax), hy(x, y))
+    hz_interp = RegularGridInterpolator((y_ax, x_ax), hz(x, y))
+
+    hx = lambda x, y: hx_interp((y, x))
+    hy = lambda x, y: hy_interp((y, x))
+    hz = lambda x, y: hz_interp((y, x))
+
+    return hx, hy, hz
