@@ -117,7 +117,7 @@ def impurity_system(
         t_so_prime  (float): Spin-orbit hopping amplitude for the impurity.
         t_am_prime  (float): Altermagnetic hopping amplitude for the impurity.
         impurity_positions (list): list of the position for impurities
-        
+
     Returns:
         kwant.system.System: A Kwant system for the given parameters.
     """
@@ -141,31 +141,31 @@ def impurity_system(
         x, y = pos
 
         # Changing the hopping around the impurity
-        syst[lat(x, y), lat(x-1, y)] = (
+        syst[lat(x, y), lat(x - 1, y)] = (
             -t_prime * tzs0 + t_am_prime * t0sz - 1j * t_so_prime * tzsy
         )
-        syst[lat(x-1, y), lat(x, y)] = (
-            -t_prime * tzs0 + t_am_prime * t0sz - 1j * t_so_prime * tzsy
-        ).conj()
-    
-        syst[lat(x+1, y), lat(x, y)] = (
-            -t_prime * tzs0 + t_am_prime * t0sz - 1j * t_so_prime * tzsy
-        )
-        syst[lat(x, y), lat(x+1, y)] = (
+        syst[lat(x - 1, y), lat(x, y)] = (
             -t_prime * tzs0 + t_am_prime * t0sz - 1j * t_so_prime * tzsy
         ).conj()
-    
-        syst[lat(x, y+1), lat(x, y)] = (
+
+        syst[lat(x + 1, y), lat(x, y)] = (
+            -t_prime * tzs0 + t_am_prime * t0sz - 1j * t_so_prime * tzsy
+        )
+        syst[lat(x, y), lat(x + 1, y)] = (
+            -t_prime * tzs0 + t_am_prime * t0sz - 1j * t_so_prime * tzsy
+        ).conj()
+
+        syst[lat(x, y + 1), lat(x, y)] = (
             -t_prime * tzs0 - t_am_prime * t0sz + 1j * t_so_prime * tzsx
         )
-        syst[lat(x, y), lat(x, y+1)] = (
+        syst[lat(x, y), lat(x, y + 1)] = (
             -t_prime * tzs0 - t_am_prime * t0sz + 1j * t_so_prime * tzsx
         ).conj()
-        
-        syst[lat(x, y), lat(x, y-1)] = (
+
+        syst[lat(x, y), lat(x, y - 1)] = (
             -t_prime * tzs0 - t_am_prime * t0sz + 1j * t_so_prime * tzsx
         )
-        syst[lat(x-1, y), lat(x, y)] = (
+        syst[lat(x - 1, y), lat(x, y)] = (
             -t_prime * tzs0 - t_am_prime * t0sz + 1j * t_so_prime * tzsx
         ).conj()
 
@@ -175,13 +175,15 @@ def impurity_system(
 def generate_intial_Delta(x, y, Delta_init, vortex_positions, windings, l_core):
     x_ax = x[0]
     y_ax = y[:, 0]
-    
+
     Psi_n = Delta_init + 0j * x
 
     if l_core != 0:
         for n, pos in enumerate(vortex_positions):
             xp, yp = pos
-            Psi_n *= (1 - np.exp(-np.sqrt((x - xp) ** 2 + (y - yp) ** 2) / l_core)) * np.exp(1j * windings[n] * np.arctan2(y-yp, x-xp))
+            Psi_n *= (
+                1 - np.exp(-np.sqrt((x - xp) ** 2 + (y - yp) ** 2) / l_core)
+            ) * np.exp(1j * windings[n] * np.arctan2(y - yp, x - xp))
 
     # Create the new interpolation functions
     Delta_interp = RegularGridInterpolator((y_ax, x_ax), abs(Psi_n))
@@ -280,14 +282,8 @@ def setup_gaussian_impurities(
 
     return V, hx, hy, hz
 
-def setup_Coulomb_impurities(
-    x,
-    y,
-    mu,
-    impurity_positions,
-    V_imp,
-    screening_length
-    ):
+
+def setup_Coulomb_impurities(x, y, mu, impurity_positions, V_imp, screening_length):
 
     x_ax = x[0]
     y_ax = y[:, 0]
@@ -295,12 +291,16 @@ def setup_Coulomb_impurities(
     # Fields definition
     def V(x, y):
         Vf = -mu + 0 * x
-        
+
         for i, pos in enumerate(impurity_positions):
             xp, yp = pos
             r = np.array([x - xp, y - yp])
-            r_magnitude = np.sqrt(r[0]**2 + r[1]**2)
-            Vf += V_imp[i] * np.exp(-r_magnitude / screening_length) / np.sqrt(r_magnitude**2 + 1)
+            r_magnitude = np.sqrt(r[0] ** 2 + r[1] ** 2)
+            Vf += (
+                V_imp[i]
+                * np.exp(-r_magnitude / screening_length)
+                / np.sqrt(r_magnitude**2 + 1)
+            )
         return Vf
 
     # Create the potential grid

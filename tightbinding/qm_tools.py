@@ -12,15 +12,17 @@ from scipy.interpolate import interp1d
 from typing import List, Optional, Sequence, Tuple, Union
 import mumps
 
+
 def sparse_diag(matrix, k, sigma, **kwargs):
     """Call sla.eigsh with mumps support.
 
     See scipy.sparse.linalg.eigsh for documentation.
     """
+
     class LuInv(sla.LinearOperator):
         def __init__(self, A):
             inst = mumps.Context()
-            inst.analyze(A, ordering='pord')
+            inst.analyze(A, ordering="pord")
             inst.factor(A)
             self.solve = inst.solve
             sla.LinearOperator.__init__(self, A.dtype, A.shape)
@@ -30,6 +32,7 @@ def sparse_diag(matrix, k, sigma, **kwargs):
 
     opinv = LuInv(matrix - sigma * sp.identity(matrix.shape[0]))
     return sla.eigsh(matrix, k, sigma=sigma, OPinv=opinv, **kwargs)
+
 
 def thermal_broadening(e_ax: np.ndarray, y: np.ndarray, T: float) -> np.ndarray:
     """
@@ -72,36 +75,46 @@ def thermal_broadening(e_ax: np.ndarray, y: np.ndarray, T: float) -> np.ndarray:
         return tb
 
 
-def sort_eigensystem(ws, vs):
-    """Sort the eigensystem of an Hamiltonian.
+def sort_eigensystem(ws, vs, threshold=None):
+    """
+    Sort the eigensystem of a Hamiltonian.
 
     Parameters:
     -----------
-    ws : eigenvalues
-    vs : eigenvectos
+    ws : numpy.ndarray
+        Array of eigenvalues with shape (M, N), where M is the number of sets of eigenvalues and N is the number of eigenvalues in each set.
+    vs : numpy.ndarray
+        Array of eigenvectors with shape (M, N, N), where M is the number of sets of eigenvectors, and each set contains N eigenvectors of length N.
+    threshold : float, optional
+        Minimal overlap when the eigenvectors are considered belonging to the same band.
+        Default is (2 / N)**0.25 if not provided.
 
     Returns:
-    ws_sorted : sorted eigenvalues
-    vs_sorted : sorted eigenvectors
+    --------
+    ws_sorted : numpy.ndarray
+        Array of sorted eigenvalues with shape (M, N).
+    vs_sorted : numpy.ndarray
+        Array of sorted eigenvectors with shape (M, N, N).
     """
 
     def best_match(psi1, psi2, threshold=None):
-        """Find the best match of two sets of eigenvectors.
+        """
+        Find the best match of two sets of eigenvectors.
 
         Parameters:
         -----------
-        psi1, psi2 : numpy 2D complex arrays
-            Arrays of initial and final eigenvectors.
+        psi1, psi2 : numpy.ndarray
+            Arrays of initial and final eigenvectors with shape (N, N).
         threshold : float, optional
             Minimal overlap when the eigenvectors are considered belonging to the same band.
-            The default value is :math:`1/(2N)^{1/4}`, where :math:`N` is the length of each eigenvector.
+            Default is (2 / N)**0.25 if not provided.
 
         Returns:
         --------
-        sorting : numpy 1D integer array
-            Permutation to apply to ``psi2`` to make the optimal match.
-        diconnects : numpy 1D bool array
-            The levels with overlap below the ``threshold`` that should be considered disconnected.
+        perm : numpy.ndarray
+            Permutation array to apply to psi2 to make the optimal match.
+        disconnects : numpy.ndarray
+            Boolean array indicating which levels should be considered disconnected.
         """
         if threshold is None:
             threshold = (2 * psi1.shape[0]) ** -0.25
@@ -109,29 +122,25 @@ def sort_eigensystem(ws, vs):
         orig, perm = linear_sum_assignment(-Q)
         return perm, Q[orig, perm] < threshold
 
-    N = ws.shape[0]
+    M, N = ws.shape
 
-    e = ws[0]
-    psi = vs[0]
+    ws_sorted = np.zeros_like(ws)
+    vs_sorted = np.zeros_like(vs, dtype=vs.dtype)
 
-    ws_sorted = [e]
-    vs_sorted = [psi]
+    ws_sorted[0] = ws[0]
+    vs_sorted[0] = vs[0]
 
-    for i in range(1, N):
-        e2 = ws[i]
-        psi2 = vs[i]
-        perm, line_breaks = best_match(psi, psi2)
-        e2 = e2[perm]
-        intermediate = (e + e2) / 2
-        intermediate[line_breaks] = None
-        psi = psi2[:, perm]
-        e = e2
+    for i in range(1, M):
+        perm, line_breaks = best_match(vs_sorted[i - 1], vs[i], threshold)
+        ws_sorted[i] = ws[i][perm]
+        vs_sorted[i] = vs[i][:, perm]
 
-        ws_sorted.append(intermediate)
-        ws_sorted.append(e)
-        vs_sorted.append(psi)
+        # Handle disconnected levels
+        disconnected_levels = line_breaks.nonzero()[0]
+        for level in disconnected_levels:
+            ws_sorted[i, level] = np.nan
 
-    return np.array(ws_sorted)[::2], np.array(vs_sorted)
+    return ws_sorted, vs_sorted
 
 
 def plot_spectrum(x, v0, w, v, c0, **kwargs):

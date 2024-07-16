@@ -1,5 +1,5 @@
 figure.figsize      : 3.375, 2
-figure.dpi          : 1000
+figure.dpi          : 600
 
 # Font
 mathtext.fontset    : cm
@@ -10,7 +10,7 @@ axes.labelsize      : 8
 legend.fontsize     : 8
 xtick.labelsize     : 8
 ytick.labelsize     : 8
-text.usetex         : False
+text.usetex         : True
 text.latex.preamble : \usepackage{lmodern, sfmath}
 
 # Plot style

@@ -118,7 +118,7 @@ def complex_plot(
 # plt.show()
 
 
-def multiplot(x, ys, colors=None, ax=None, colormap='viridis', **kwargs):
+def multiplot(x, ys, colors=None, ax=None, colormap="viridis", **kwargs):
     """
     Plot multiple lines with smoothly changing colors.
 
@@ -134,7 +134,7 @@ def multiplot(x, ys, colors=None, ax=None, colormap='viridis', **kwargs):
     Returns:
     - LineCollection object added to the plot
     """
-    
+
     if ax is None:
         ax = plt.gca()
 
@@ -144,29 +144,31 @@ def multiplot(x, ys, colors=None, ax=None, colormap='viridis', **kwargs):
     x_N = x.shape[0]
     y_N = ys.shape[1]
 
-    assert x.shape[0] == ys.shape[0], "x and ys must have the same length in the first dimension."
-    
+    assert (
+        x.shape[0] == ys.shape[0]
+    ), "x and ys must have the same length in the first dimension."
+
     if colors is None:
         colors = np.zeros((x_N, y_N, 4))
         cmap = plt.colormaps.get_cmap(colormap)
         for i in range(y_N):
-            norm = plt.Normalize(vmin=0, vmax=x_N-1)
+            norm = plt.Normalize(vmin=0, vmax=x_N - 1)
             sm = cm.ScalarMappable(cmap=cmap, norm=norm)
-            colors[:, i, :] = sm.to_rgba(np.linspace(0, x_N-1, x_N))
+            colors[:, i, :] = sm.to_rgba(np.linspace(0, x_N - 1, x_N))
 
-    assert ys.shape[:2] == colors.shape[:2] and colors.shape[2] == 4, (
-        "ys must have shape (x_N, y_N) and colors must have shape (x_N, y_N, 4)."
-    )
+    assert (
+        ys.shape[:2] == colors.shape[:2] and colors.shape[2] == 4
+    ), "ys must have shape (x_N, y_N) and colors must have shape (x_N, y_N, 4)."
 
     # Prepare arrays
     segments = np.zeros((y_N * (x_N - 1), 2, 2))
     s_colors = np.zeros((y_N * (x_N - 1), 4))
-    
+
     # For each line
     for n in range(y_N):
         start_idx = n * (x_N - 1)
         end_idx = (n + 1) * (x_N - 1)
-        
+
         segments[start_idx:end_idx, 0, 0] = x[:-1]
         segments[start_idx:end_idx, 1, 0] = x[1:]
         segments[start_idx:end_idx, 0, 1] = ys[:-1, n]
@@ -179,6 +181,7 @@ def multiplot(x, ys, colors=None, ax=None, colormap='viridis', **kwargs):
     ax.add_collection(lc)
     ax.autoscale()
     return lc
+
 
 # Example usage with three lines and smoothly changing colors between two specified colors for each line
 
