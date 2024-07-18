@@ -75,7 +75,7 @@ def thermal_broadening(e_ax: np.ndarray, y: np.ndarray, T: float) -> np.ndarray:
         return tb
 
 
-def sort_eigensystem(ws, vs, threshold=None):
+def sort_eigensystem(ws, vs, threshold=None, how_disconnect="to_nan"):
     """
     Sort the eigensystem of a Hamiltonian.
 
@@ -122,7 +122,7 @@ def sort_eigensystem(ws, vs, threshold=None):
         orig, perm = linear_sum_assignment(-Q)
         return perm, Q[orig, perm] < threshold
 
-    M, N = ws.shape
+    M, k, N = vs.shape
 
     ws_sorted = np.zeros_like(ws)
     vs_sorted = np.zeros_like(vs, dtype=vs.dtype)
@@ -136,9 +136,12 @@ def sort_eigensystem(ws, vs, threshold=None):
         vs_sorted[i] = vs[i][:, perm]
 
         # Handle disconnected levels
-        disconnected_levels = line_breaks.nonzero()[0]
-        for level in disconnected_levels:
-            ws_sorted[i, level] = np.nan
+        if how_disconnect=='ignore':
+            pass
+        elif how_disconnect=='to_nan':
+            disconnected_levels = line_breaks.nonzero()[0]
+            for level in disconnected_levels:
+                ws_sorted[i, level] = np.nan
 
     return ws_sorted, vs_sorted
 
