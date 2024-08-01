@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
@@ -67,9 +68,7 @@ def colorize(z: ArrayLike) -> ArrayLike:
     return c
 
 
-def complex_plot(
-    x: ArrayLike, y: ArrayLike, z: ArrayLike, ax: Optional[Axes] = None
-) -> Tuple[Figure, Axes, AxesImage]:
+def complex_plot(x, y, z, ax=None, interpolation="gaussian"):
     """
     Plot the complex field represented by z.
 
@@ -96,11 +95,10 @@ def complex_plot(
     img = ax.imshow(
         colorize(z),
         extent=(x.min(), x.max(), y.min(), y.max()),
-        interpolation="bilinear",
+        interpolation=interpolation,
     )
 
     return fig, ax, img
-
 
 # # Example usage
 # x = np.linspace(-1, 1, 100)
@@ -118,14 +116,14 @@ def complex_plot(
 # plt.show()
 
 
-def multiplot(x, ys, colors=None, ax=None, colormap="viridis", **kwargs):
+def multiplot(x, ys, cs=None, ax=None, colormap="viridis", **kwargs):
     """
     Plot multiple lines with smoothly changing colors.
 
     Parameters:
     - x        : (x_N,) array-like, x-axis values
     - ys       : (x_N, y_N) array-like, y-axis values for multiple lines
-    - colors   : (x_N, y_N, 4) array-like, RGBA colors for each point on the lines
+    - cs   : (x_N, y_N, 4) array-like, RGBA colors for each point on the lines
                  If None, colors are generated using the specified colormap.
     - ax       : matplotlib axes to plot on. If None, uses the current axes.
     - colormap : str, name of the colormap to use if colors are not provided
@@ -148,17 +146,17 @@ def multiplot(x, ys, colors=None, ax=None, colormap="viridis", **kwargs):
         x.shape[0] == ys.shape[0]
     ), "x and ys must have the same length in the first dimension."
 
-    if colors is None:
-        colors = np.zeros((x_N, y_N, 4))
+    if cs is None:
+        cs = np.zeros((x_N, y_N, 4))
         cmap = plt.colormaps.get_cmap(colormap)
         for i in range(y_N):
             norm = plt.Normalize(vmin=0, vmax=x_N - 1)
             sm = cm.ScalarMappable(cmap=cmap, norm=norm)
-            colors[:, i, :] = sm.to_rgba(np.linspace(0, x_N - 1, x_N))
+            cs[:, i, :] = sm.to_rgba(np.linspace(0, x_N - 1, x_N))
 
     assert (
-        ys.shape[:2] == colors.shape[:2] and colors.shape[2] == 4
-    ), "ys must have shape (x_N, y_N) and colors must have shape (x_N, y_N, 4)."
+        ys.shape[:2] == cs.shape[:2] and cs.shape[2] == 4
+    ), "ys must have shape (x_N, y_N) and cs must have shape (x_N, y_N, 4)."
 
     # Prepare arrays
     segments = np.zeros((y_N * (x_N - 1), 2, 2))
@@ -175,7 +173,7 @@ def multiplot(x, ys, colors=None, ax=None, colormap="viridis", **kwargs):
         segments[start_idx:end_idx, 1, 1] = ys[1:, n]
 
         # Average the colors for each segment
-        s_colors[start_idx:end_idx] = (colors[:-1, n] + colors[1:, n]) / 2
+        s_colors[start_idx:end_idx] = (cs[:-1, n] + cs[1:, n]) / 2
 
     lc = LineCollection(segments, colors=s_colors, **kwargs)
     ax.add_collection(lc)
@@ -207,3 +205,45 @@ def multiplot(x, ys, colors=None, ax=None, colormap="viridis", **kwargs):
 # plt.ylabel('y-axis')
 # plt.title('Multiline Plot with Smoothly Changing Colors')
 # plt.show()
+
+
+def multiplot_2d(xs, ys, cs=None, ax=None):
+    """
+    Plot multiple 2D lines with varying colors.
+
+    Parameters:
+    - xs  : list of arrays, each containing x-axis values for a line
+    - ys  : list of arrays, each containing y-axis values for a line
+    - cs  : list of arrays, each containing RGBA colors for points on the lines
+            If None, a default colormap will be used.
+    - ax  : matplotlib axes to plot on. If None, uses the current axes.
+
+    Returns:
+    - LineCollection object added to the plot
+    """
+    
+    if ax is None:
+        ax = plt.gca()
+
+    if cs is None:
+        cs = []
+        cmap = plt.get_cmap("viridis")
+        for line in ys:
+            N_points = len(line)
+            norm = plt.Normalize(vmin=0, vmax=N_points - 1)
+            sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
+            cs.append(sm.to_rgba(np.linspace(0, N_points - 1, N_points)))
+
+    segments = []
+    s_colors = []
+
+    for x, y, c in zip(xs, ys, cs):
+        points = np.array([x, y]).T.reshape(-1, 1, 2)
+        segs = np.concatenate([points[:-1], points[1:]], axis=1)
+        segments.extend(segs)
+        s_colors.extend((np.array(c[:-1]) + np.array(c[1:])) / 2)
+
+    lc = LineCollection(segments, colors=s_colors)
+    ax.add_collection(lc)
+    ax.autoscale()
+    return lc

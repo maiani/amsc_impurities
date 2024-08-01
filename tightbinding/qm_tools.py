@@ -136,9 +136,9 @@ def sort_eigensystem(ws, vs, threshold=None, how_disconnect="to_nan"):
         vs_sorted[i] = vs[i][:, perm]
 
         # Handle disconnected levels
-        if how_disconnect=='ignore':
+        if how_disconnect == "ignore":
             pass
-        elif how_disconnect=='to_nan':
+        elif how_disconnect == "to_nan":
             disconnected_levels = line_breaks.nonzero()[0]
             for level in disconnected_levels:
                 ws_sorted[i, level] = np.nan
