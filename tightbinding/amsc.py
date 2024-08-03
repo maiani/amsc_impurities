@@ -172,7 +172,27 @@ def impurity_system(
     return syst, lat
 
 
-def generate_intial_Delta(x, y, Delta_init, vortex_positions, windings, l_core):
+def generate_intial_Delta(
+    x, y, Delta_init, vortex_positions, windings, l_core, noise=0
+):
+    """
+    Generate the initial order parameter Delta for a simulation using the AM-SC model.
+
+    Parameters:
+        x (array-like): The x-coordinates of the grid.
+        y (array-like): The y-coordinates of the grid.
+        Delta_init (array-like): The initial order parameter Delta.
+        vortex_positions (list of tuples): The positions of the vortices.
+        windings (list of floats): The windings of the vortices.
+        l_core (float): The core length of the vortices.
+        noise (float, optional): The amount of noise to add to the initial order parameter. Defaults to 0.
+
+    Returns:
+        tuple: A tuple containing two functions:
+            - Delta (function): The order parameter Delta as a function of x and y.
+            - theta (function): The phase angle theta as a function of x and y.
+    """
+
     x_ax = x[0]
     y_ax = y[:, 0]
 
@@ -184,6 +204,11 @@ def generate_intial_Delta(x, y, Delta_init, vortex_positions, windings, l_core):
             Psi_n *= (
                 1 - np.exp(-np.sqrt((x - xp) ** 2 + (y - yp) ** 2) / l_core)
             ) * np.exp(1j * windings[n] * np.arctan2(y - yp, x - xp))
+
+    if noise != 0:
+        Psi_n += np.random.normal(
+            0, noise / np.sqrt(2), Psi_n.shape
+        ) + 1j * np.random.normal(0, noise / np.sqrt(2), Psi_n.shape)
 
     # Create the new interpolation functions
     Delta_interp = RegularGridInterpolator((y_ax, x_ax), abs(Psi_n))
@@ -212,6 +237,33 @@ def setup_gaussian_impurities(
     hy_imp,
     hz_imp,
 ):
+    """
+    Setup the potential and fields for Gaussian impurities.
+
+    Args:
+        x (numpy.ndarray): The x-coordinates.
+        y (numpy.ndarray): The y-coordinates.
+        mu (float): The chemical potential.
+        hx0 (float): The x-component of the magnetic field at the origin.
+        hy0 (float): The y-component of the magnetic field at the origin.
+        hz0 (float): The z-component of the magnetic field at the origin.
+        impurity_positions (List[Tuple[float, float]]): The positions of the impurities.
+        impurity_sizes (List[float]): The sizes of the impurities.
+        impurity_eccentricities (List[float]): The eccentricities of the impurities.
+        impurity_orientations (List[float]): The orientations of the impurities.
+        V_imp (List[float]): The potential values of the impurities.
+        hx_imp (List[float]): The x-component of the magnetic field values of the impurities.
+        hy_imp (List[float]): The y-component of the magnetic field values of the impurities.
+        hz_imp (List[float]): The z-component of the magnetic field values of the impurities.
+
+    Returns:
+        Tuple[Callable[[float, float], float], Callable[[float, float], float], Callable[[float, float], float], Callable[[float, float], float]]:
+            - V (Callable[[float, float], float]): The potential function.
+            - hx (Callable[[float, float], float]): The x-component of the magnetic field function.
+            - hy (Callable[[float, float], float]): The y-component of the magnetic field function.
+            - hz (Callable[[float, float], float]): The z-component of the magnetic field function.
+    """
+
     x_ax = x[0]
     y_ax = y[:, 0]
 
@@ -284,6 +336,21 @@ def setup_gaussian_impurities(
 
 
 def setup_Coulomb_impurities(x, y, mu, impurity_positions, V_imp, screening_length):
+    """
+    Set up the Coulomb impurities for a given set of positions and parameters.
+
+    Parameters:
+        x (ndarray): The x-coordinates of the grid.
+        y (ndarray): The y-coordinates of the grid.
+        mu (float): The chemical potential.
+        impurity_positions (list): The positions of the impurities.
+        V_imp (list): The potential values of the impurities.
+        screening_length (float): The screening length.
+
+    Returns:
+        function: The interpolated potential function.
+
+    """
 
     x_ax = x[0]
     y_ax = y[:, 0]
@@ -327,6 +394,26 @@ def setup_spin_impurities(
     hy_imp,
     hz_imp,
 ):
+    """
+    Set up the spin impurities in a tight-binding model.
+    Args:
+        x (ndarray): The x-coordinates of the grid points.
+        y (ndarray): The y-coordinates of the grid points.
+        hx0 (float): The x-component of the external magnetic field.
+        hy0 (float): The y-component of the external magnetic field.
+        hz0 (float): The z-component of the external magnetic field.
+        impurity_positions (List[Tuple[float, float]]): The positions of the impurity centers.
+        impurity_sizes (List[float]): The sizes of the impurity Gaussian potentials.
+        impurity_eccentricities (List[float]): The eccentricities of the impurity Gaussian potentials.
+        impurity_orientations (List[float]): The orientations of the impurity Gaussian potentials.
+        hx_imp (List[float]): The x-components of the impurity magnetic fields.
+        hy_imp (List[float]): The y-components of the impurity magnetic fields.
+        hz_imp (List[float]): The z-components of the impurity magnetic fields.
+    Returns:
+        Tuple[Callable[[float, float], float], Callable[[float, float], float], Callable[[float, float], float]]:
+            The x-component, y-component, and z-component of the magnetic field at each grid point.
+    """
+
     x_ax = x[0]
     y_ax = y[:, 0]
 

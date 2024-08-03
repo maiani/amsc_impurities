@@ -99,6 +99,7 @@ def complex_plot(x, y, z, ax=None, interpolation="gausssian"):
 
     return fig, ax, img
 
+
 # # Example usage
 # x = np.linspace(-1, 1, 100)
 # y = np.linspace(-1, 1, 100)
@@ -220,7 +221,7 @@ def multiplot_2d(xs, ys, cs=None, ax=None):
     Returns:
     - LineCollection object added to the plot
     """
-    
+
     if ax is None:
         ax = plt.gca()
 
