@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="200.080583pt" height="73.224426pt" viewBox="0 0 200.080583 73.224426" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2024-08-06T22:04:12.616063</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 73.224426 
+L 200.080583 73.224426 
+L 200.080583 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 17.920583 59.04 
+L 196.480583 59.04 
+L 196.480583 3.6 
+L 17.920583 3.6 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="meaf74143e7" d="M 0 0 
+L 0 -2.5 
+" style="stroke: #000000; stroke-width: 0.6"/>
+      </defs>
+      <g>
+       <use xlink:href="#meaf74143e7" x="28.424113" y="59.04" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- $\mathdefault{25}$ -->
+      <g transform="translate(24.18999 68.074741) scale(0.08 -0.08)">
+       <defs>
+        <path id="LMSans17-Regular-32" d="M 2701 0 
+L 2701 435 
+L 1613 435 
+C 1536 435 1459 428 1382 428 
+L 742 428 
+L 742 435 
+L 1651 1353 
+C 1830 1538 2099 1761 2285 1984 
+C 2464 2201 2701 2507 2701 2953 
+C 2701 3655 2227 4288 1421 4288 
+C 787 4288 422 3891 250 3272 
+L 499 2928 
+C 640 3508 838 3878 1338 3878 
+C 1888 3878 2195 3431 2195 2940 
+C 2195 2354 1747 1901 1408 1563 
+L 301 409 
+L 301 0 
+L 2701 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="LMSans17-Regular-35" d="M 2701 1280 
+C 2701 2082 2182 2694 1562 2694 
+C 1338 2694 1120 2617 934 2464 
+L 934 3814 
+L 2502 3814 
+L 2502 4224 
+L 467 4224 
+L 467 1827 
+L 896 1827 
+C 1011 2101 1248 2304 1555 2304 
+C 1843 2304 2163 2043 2163 1293 
+C 2163 501 1709 268 1376 268 
+C 966 268 589 521 422 870 
+L 218 508 
+C 512 51 992 -128 1376 -128 
+C 2118 -128 2701 508 2701 1280 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#LMSans17-Regular-32" transform="scale(0.996264)"/>
+       <use xlink:href="#LMSans17-Regular-35" transform="translate(46.844004 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#meaf74143e7" x="80.94176" y="59.04" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- $\mathdefault{20}$ -->
+      <g transform="translate(76.707638 68.074741) scale(0.08 -0.08)">
+       <defs>
+        <path id="LMSans17-Regular-30" d="M 2758 2075 
+C 2758 2441 2752 3122 2490 3648 
+C 2227 4153 1805 4288 1504 4288 
+C 1069 4288 698 4031 506 3622 
+C 301 3193 243 2749 243 2075 
+C 243 1612 262 1046 493 551 
+C 755 6 1197 -128 1498 -128 
+C 1894 -128 2278 83 2496 525 
+C 2720 988 2758 1496 2758 2075 
+z
+M 2272 2145 
+C 2272 1547 2272 262 1498 262 
+C 1011 262 864 821 819 1008 
+C 742 1329 730 1637 730 2145 
+C 730 2544 730 2994 851 3347 
+C 998 3756 1254 3897 1498 3897 
+C 1971 3897 2125 3423 2176 3257 
+C 2272 2917 2272 2518 2272 2145 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#LMSans17-Regular-32" transform="scale(0.996264)"/>
+       <use xlink:href="#LMSans17-Regular-30" transform="translate(46.844004 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#meaf74143e7" x="133.459407" y="59.04" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- $\mathdefault{15}$ -->
+      <g transform="translate(129.225285 68.074741) scale(0.08 -0.08)">
+       <defs>
+        <path id="LMSans17-Regular-31" d="M 2573 0 
+L 2573 371 
+L 1818 371 
+L 1818 4288 
+L 1696 4288 
+C 1350 3951 947 3903 538 3891 
+L 538 3520 
+C 723 3526 1024 3539 1325 3673 
+L 1325 371 
+L 570 371 
+L 570 0 
+L 2573 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#LMSans17-Regular-31" transform="scale(0.996264)"/>
+       <use xlink:href="#LMSans17-Regular-35" transform="translate(46.844004 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#meaf74143e7" x="185.977054" y="59.04" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- $\mathdefault{10}$ -->
+      <g transform="translate(181.742932 68.074741) scale(0.08 -0.08)">
+       <use xlink:href="#LMSans17-Regular-31" transform="scale(0.996264)"/>
+       <use xlink:href="#LMSans17-Regular-30" transform="translate(46.844004 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_5">
+     <!-- $d/a$ -->
+     <g transform="translate(100.504996 67.60201) scale(0.08 -0.08)">
+      <defs>
+       <path id="LMSans17-Oblique-64" d="M 2611 -13 
+L 3558 4416 
+L 3085 4416 
+L 2662 2495 
+C 2502 2662 2208 2816 1850 2816 
+C 1267 2816 672 2179 506 1375 
+C 333 572 653 -64 1222 -64 
+C 1664 -64 2010 172 2195 307 
+L 2125 -13 
+L 2611 -13 
+z
+M 2304 851 
+C 2291 760 2266 663 2035 488 
+C 1882 378 1715 326 1568 326 
+C 1222 326 826 585 986 1369 
+C 1158 2185 1722 2425 2074 2425 
+C 2310 2425 2477 2308 2573 2114 
+L 2304 851 
+z
+" transform="scale(0.015625)"/>
+       <path id="LMMathItalic12-Regular-3d" d="M 2784 4678 
+C 2784 4755 2720 4800 2669 4800 
+C 2637 4800 2579 4800 2528 4659 
+L 384 -1364 
+L 346 -1479 
+C 346 -1556 410 -1600 461 -1600 
+C 499 -1600 557 -1594 602 -1460 
+L 2746 4563 
+L 2784 4678 
+z
+" transform="scale(0.015625)"/>
+       <path id="LMSans17-Oblique-61" d="M 2470 -13 
+L 2854 1789 
+C 2982 2399 2643 2816 2067 2816 
+C 1786 2816 1466 2764 1069 2559 
+L 1018 2133 
+C 1203 2250 1517 2438 1978 2438 
+C 2304 2438 2451 2185 2368 1782 
+L 2317 1536 
+C 1286 1504 582 1209 474 711 
+C 422 452 467 -64 998 -64 
+C 1094 -64 1619 -52 2048 224 
+L 1997 -13 
+L 2470 -13 
+z
+M 2163 824 
+C 2138 711 2106 559 1888 446 
+C 1702 339 1485 326 1395 326 
+C 1075 326 896 503 947 723 
+C 1043 1165 2048 1209 2246 1216 
+L 2163 824 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#LMSans17-Oblique-64" transform="scale(0.996264)"/>
+      <use xlink:href="#LMMathItalic12-Regular-3d" transform="translate(58.081055 0) scale(0.996264)"/>
+      <use xlink:href="#LMSans17-Oblique-61" transform="translate(106.855973 0) scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5">
+      <defs>
+       <path id="m51c26de4a1" d="M 0 0 
+L 2.5 0 
+" style="stroke: #000000; stroke-width: 0.6"/>
+      </defs>
+      <g>
+       <use xlink:href="#m51c26de4a1" x="17.920583" y="59.04" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <!-- 0.0 -->
+      <g transform="translate(3.6 61.80737) scale(0.08 -0.08)">
+       <defs>
+        <path id="LMSans17-Regular-2e" d="M 1088 0 
+L 1088 512 
+L 576 512 
+L 576 0 
+L 1088 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#LMSans17-Regular-30" transform="scale(0.996264)"/>
+       <use xlink:href="#LMSans17-Regular-2e" transform="translate(46.844004 0) scale(0.996264)"/>
+       <use xlink:href="#LMSans17-Regular-30" transform="translate(72.869166 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m51c26de4a1" x="17.920583" y="15.271579" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <!-- 0.3 -->
+      <g transform="translate(3.6 18.038949) scale(0.08 -0.08)">
+       <defs>
+        <path id="LMSans17-Regular-33" d="M 2752 1164 
+C 2752 1670 2400 2092 1920 2252 
+C 2304 2463 2586 2860 2586 3321 
+C 2586 3859 2093 4288 1491 4288 
+C 941 4288 512 3948 333 3583 
+C 378 3519 493 3334 550 3238 
+C 691 3615 1056 3897 1485 3897 
+C 1843 3897 2080 3660 2080 3321 
+C 2080 2969 1856 2585 1478 2496 
+C 1453 2483 1056 2444 1005 2438 
+L 1005 2048 
+L 1440 2048 
+C 2042 2048 2214 1514 2214 1143 
+C 2214 640 1933 268 1472 268 
+C 1114 268 608 434 320 902 
+C 275 678 275 665 250 512 
+C 550 89 1037 -128 1485 -128 
+C 2214 -128 2752 464 2752 1136 
+L 2752 1164 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#LMSans17-Regular-30" transform="scale(0.996264)"/>
+       <use xlink:href="#LMSans17-Regular-2e" transform="translate(46.844004 0) scale(0.996264)"/>
+       <use xlink:href="#LMSans17-Regular-33" transform="translate(72.869166 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_8">
+     <!-- $\omega_n$ -->
+     <g transform="translate(10.050315 35.592484) rotate(-90) scale(0.08 -0.08)">
+      <defs>
+       <path id="LMMathItalic12-Regular-21" d="M 3642 1533 
+C 3712 1807 3795 2133 3795 2394 
+C 3795 2548 3763 2682 3680 2765 
+C 3642 2797 3590 2816 3539 2816 
+C 3469 2816 3398 2784 3341 2726 
+C 3283 2669 3251 2599 3251 2535 
+C 3251 2484 3270 2433 3309 2394 
+C 3462 2254 3539 2050 3539 1820 
+C 3539 1737 3526 1647 3507 1558 
+C 3360 964 3002 352 2483 352 
+C 2112 352 1907 620 1862 977 
+C 1939 1156 2003 1347 2048 1533 
+C 2061 1590 2074 1654 2074 1711 
+C 2074 1788 2048 1845 1971 1845 
+C 1856 1845 1805 1692 1773 1558 
+C 1722 1367 1690 1175 1683 990 
+C 1472 626 1165 352 800 352 
+C 416 352 250 671 250 1073 
+C 250 1220 275 1373 314 1533 
+C 410 1916 627 2279 877 2624 
+C 890 2650 896 2669 896 2694 
+C 896 2726 883 2758 851 2777 
+C 832 2784 806 2784 806 2784 
+C 768 2784 730 2765 704 2733 
+C 442 2362 275 1960 173 1558 
+C 109 1303 77 1047 77 818 
+C 77 320 250 -64 723 -64 
+C 1133 -64 1459 236 1702 645 
+C 1760 230 1971 -64 2406 -64 
+C 3066 -64 3450 760 3642 1533 
+z
+" transform="scale(0.015625)"/>
+       <path id="LMSans17-Oblique-6e" d="M 2618 12 
+L 3014 1881 
+C 3098 2284 3117 2816 2394 2816 
+C 1984 2816 1670 2604 1446 2387 
+L 1530 2783 
+L 1062 2783 
+L 474 0 
+L 960 0 
+L 1286 1556 
+C 1376 1962 1626 2425 2061 2425 
+C 2624 2425 2566 2045 2515 1827 
+L 2131 0 
+L 2618 12 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#LMMathItalic12-Regular-21" transform="scale(0.996264)"/>
+      <use xlink:href="#LMSans17-Oblique-6e" transform="translate(60.743753 -14.943915) scale(0.697382)"/>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_7">
+    <path d="M 17.920583 29.084046 
+L 28.424113 30.298623 
+L 38.927642 29.94997 
+L 49.431171 27.597315 
+L 59.934701 24.1913 
+L 70.43823 22.102748 
+L 80.94176 22.846019 
+L 91.445289 25.851404 
+L 101.948818 29.84392 
+L 112.452348 33.333679 
+L 122.955877 33.816151 
+L 133.459407 27.894555 
+L 143.962936 17.084069 
+L 154.466465 11.241734 
+L 164.969995 13.374441 
+L 175.473524 20.624827 
+L 185.977054 30.671073 
+L 196.480583 42.699629 
+L 201.080583 48.827647 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke: #0000ff; stroke-width: 0.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 197.348294 74.224426 
+L 201.080583 69.252353 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_9">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_10">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 17.920583 27.727994 
+L 28.424113 27.73128 
+L 38.927642 27.678672 
+L 49.431171 27.583753 
+L 59.934701 27.497019 
+L 70.43823 27.487635 
+L 80.94176 27.60583 
+L 91.445289 27.843098 
+L 101.948818 28.108344 
+L 112.452348 28.238037 
+L 122.955877 28.065653 
+L 133.459407 27.55814 
+L 143.962936 26.936461 
+L 154.466465 26.627675 
+L 164.969995 27.045212 
+L 175.473524 28.390279 
+L 185.977054 30.559613 
+L 196.480583 33.009107 
+L 201.080583 33.630371 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #ff0000; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 17.920583 27.521581 
+L 28.424113 27.518355 
+L 38.927642 27.570402 
+L 49.431171 27.665243 
+L 59.934701 27.754386 
+L 70.43823 27.766725 
+L 80.94176 27.646042 
+L 91.445289 27.401308 
+L 101.948818 27.13459 
+L 112.452348 27.010152 
+L 122.955877 27.17073 
+L 133.459407 27.645781 
+L 143.962936 28.280993 
+L 154.466465 28.693727 
+L 164.969995 28.315543 
+L 175.473524 26.708424 
+L 185.977054 24.164957 
+L 196.480583 21.848887 
+L 201.080583 21.434991 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke: #ff0000; stroke-width: 0.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_13">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 17.920583 25.409148 
+L 28.424113 24.126659 
+L 38.927642 24.689605 
+L 49.431171 26.803083 
+L 59.934701 29.485757 
+L 70.43823 31.497913 
+L 80.94176 31.307479 
+L 91.445289 27.704004 
+L 101.948818 21.940712 
+L 112.452348 18.408053 
+L 122.955877 19.516602 
+L 133.459407 23.929233 
+L 143.962936 29.943994 
+L 154.466465 36.146509 
+L 164.969995 39.071679 
+L 175.473524 28.183238 
+L 185.977054 6.289464 
+L 196.480583 4.062961 
+L 201.080583 4.097928 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_15">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_16">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_17">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_18">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_19">
+    <path d="M 17.920583 7.656565 
+L 28.424113 7.633418 
+L 38.927642 7.610867 
+L 49.431171 7.602204 
+L 59.934701 7.618596 
+L 70.43823 7.658239 
+L 80.94176 7.696966 
+L 91.445289 7.719366 
+L 101.948818 7.722737 
+L 112.452348 7.705591 
+L 122.955877 7.674771 
+L 133.459407 7.642131 
+L 143.962936 7.613224 
+L 154.466465 7.624428 
+L 164.969995 7.735319 
+L 175.473524 7.795617 
+L 185.977054 7.842063 
+L 196.480583 7.866464 
+L 201.080583 7.861998 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 17.920583 7.613417 
+L 28.424113 7.649562 
+L 38.927642 7.67929 
+L 49.431171 7.69184 
+L 59.934701 7.68612 
+L 70.43823 7.664825 
+L 80.94176 7.637666 
+L 91.445289 7.618729 
+L 101.948818 7.623787 
+L 112.452348 7.665664 
+L 122.955877 7.717668 
+L 133.459407 7.752822 
+L 143.962936 7.769461 
+L 154.466465 7.760635 
+L 164.969995 7.728546 
+L 175.473524 7.677606 
+L 185.977054 8.099323 
+L 196.480583 7.776174 
+L 201.080583 7.784731 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_21">
+    <path d="M 17.920583 7.275487 
+L 28.424113 7.301214 
+L 38.927642 7.326199 
+L 49.431171 7.350504 
+L 59.934701 7.374239 
+L 70.43823 7.397636 
+L 80.94176 7.421139 
+L 91.445289 7.444836 
+L 101.948818 7.467669 
+L 112.452348 7.489192 
+L 122.955877 7.509884 
+L 133.459407 7.530119 
+L 143.962936 7.550087 
+L 154.466465 7.569848 
+L 164.969995 7.589209 
+L 175.473524 7.605559 
+L 185.977054 7.663467 
+L 196.480583 7.661017 
+L 201.080583 7.669535 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_22">
+    <path d="M 17.920583 7.115745 
+L 28.424113 7.150135 
+L 38.927642 7.182806 
+L 49.431171 7.213657 
+L 59.934701 7.242981 
+L 70.43823 7.271435 
+L 80.94176 7.299768 
+L 91.445289 7.328414 
+L 101.948818 7.357191 
+L 112.452348 7.385242 
+L 122.955877 7.411262 
+L 133.459407 7.434086 
+L 143.962936 7.453663 
+L 154.466465 7.471921 
+L 164.969995 7.492248 
+L 175.473524 7.517364 
+L 185.977054 7.54786 
+L 196.480583 7.582713 
+L 201.080583 7.599281 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_23">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_24">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_25">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_26">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_27">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_28">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_29">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_30">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_31">
+    <path d="M 17.920583 5.559301 
+L 28.424113 5.571481 
+L 38.927642 5.574745 
+L 49.431171 5.566567 
+L 59.934701 5.551873 
+L 70.43823 5.540117 
+L 80.94176 5.537806 
+L 91.445289 5.544694 
+L 101.948818 5.556202 
+L 112.452348 5.567148 
+L 122.955877 5.572397 
+L 133.459407 5.567372 
+L 143.962936 5.554184 
+L 154.466465 5.543311 
+L 164.969995 5.541847 
+L 175.473524 5.545823 
+L 185.977054 5.546305 
+L 196.480583 5.539966 
+L 201.080583 5.536969 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_32">
+    <path d="M 17.920583 5.550727 
+L 28.424113 5.538974 
+L 38.927642 5.536936 
+L 49.431171 5.544823 
+L 59.934701 5.558021 
+L 70.43823 5.56999 
+L 80.94176 5.574227 
+L 91.445289 5.567258 
+L 101.948818 5.553084 
+L 112.452348 5.541537 
+L 122.955877 5.539291 
+L 133.459407 5.545076 
+L 143.962936 5.553668 
+L 154.466465 5.561881 
+L 164.969995 5.568554 
+L 175.473524 5.568374 
+L 185.977054 5.556851 
+L 196.480583 5.545794 
+L 201.080583 5.548298 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_33">
+    <path d="M 17.920583 4.424402 
+L 28.424113 4.283972 
+L 38.927642 4.141034 
+L 49.431171 3.998137 
+L 59.934701 3.858661 
+L 70.43823 3.727373 
+L 80.94176 3.610092 
+L 91.445289 3.50585 
+L 101.948818 3.40703 
+L 112.452348 3.320027 
+L 122.955877 3.252367 
+L 133.459407 3.206122 
+L 143.962936 3.181418 
+L 154.466465 3.179759 
+L 164.969995 3.156456 
+L 175.473524 3.187633 
+L 185.977054 2.791895 
+L 196.480583 3.420066 
+L 201.080583 3.443798 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_34">
+    <path d="M 17.920583 4.06282 
+L 28.424113 3.897945 
+L 38.927642 3.730728 
+L 49.431171 3.563089 
+L 59.934701 3.399014 
+L 70.43823 3.245051 
+L 80.94176 3.109184 
+L 91.445289 2.997972 
+L 101.948818 2.913301 
+L 112.452348 2.850758 
+L 122.955877 2.800982 
+L 133.459407 2.754676 
+L 143.962936 2.710935 
+L 154.466465 2.684167 
+L 164.969995 2.699447 
+L 175.473524 2.775095 
+L 185.977054 2.910275 
+L 196.480583 3.089069 
+L 201.080583 3.177917 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_35">
+    <path d="M 17.920583 3.993535 
+L 28.424113 4.088639 
+L 38.927642 4.183488 
+L 49.431171 4.276646 
+L 59.934701 4.366435 
+L 70.43823 4.452637 
+L 80.94176 4.53585 
+L 91.445289 4.616451 
+L 101.948818 4.694553 
+L 112.452348 4.770376 
+L 122.955877 4.846312 
+L 133.459407 4.927779 
+L 143.962936 4.994499 
+L 154.466465 5.054291 
+L 164.969995 5.111579 
+L 175.473524 5.166156 
+L 185.977054 5.218574 
+L 196.480583 5.270176 
+L 201.080583 5.225377 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_36">
+    <path d="M 17.920583 3.734433 
+L 28.424113 3.839999 
+L 38.927642 3.945574 
+L 49.431171 4.050938 
+L 59.934701 4.155104 
+L 70.43823 4.256414 
+L 80.94176 4.353072 
+L 91.445289 4.443974 
+L 101.948818 4.529499 
+L 112.452348 4.61168 
+L 122.955877 4.693283 
+L 133.459407 4.776147 
+L 143.962936 4.859946 
+L 154.466465 4.942085 
+L 164.969995 5.018289 
+L 175.473524 5.083274 
+L 185.977054 5.13219 
+L 196.480583 5.16521 
+L 201.080583 5.177371 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_37">
+    <path d="M 17.920583 2.908609 
+L 28.424113 2.72991 
+L 38.927642 2.474739 
+L 49.431171 2.315369 
+L 59.934701 2.424654 
+L 70.43823 2.777544 
+L 80.94176 3.153378 
+L 91.445289 3.416706 
+L 101.948818 3.518294 
+L 112.452348 3.429839 
+L 122.955877 3.174338 
+L 133.459407 2.840282 
+L 143.962936 2.603938 
+L 154.466465 2.896779 
+L 164.969995 3.538466 
+L 175.473524 3.967001 
+L 185.977054 4.278376 
+L 196.480583 4.440206 
+L 201.080583 4.426035 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_38">
+    <path d="M 17.920583 2.30318 
+L 28.424113 2.637398 
+L 38.927642 2.958001 
+L 49.431171 3.164799 
+L 59.934701 3.206222 
+L 70.43823 3.067053 
+L 80.94176 2.802133 
+L 91.445289 2.55781 
+L 101.948818 2.559341 
+L 112.452348 2.915638 
+L 122.955877 3.35703 
+L 133.459407 3.680364 
+L 143.962936 3.853065 
+L 154.466465 3.833442 
+L 164.969995 3.612495 
+L 175.473524 3.179798 
+L 185.977054 1.141512 
+L 195.307516 -1 
+M 197.913567 -1 
+L 201.080583 -0.404956 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_39">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_40">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_41">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_42">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_43">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_44">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_45">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_46">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_47">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_48">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_49">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_50">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_51">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_52">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_53">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_54">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_55">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_56">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_57">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_58">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_59">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_60">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_61">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_62">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_63">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_64">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_65">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_66">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_67">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_68">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_69">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_70">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_71">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_72">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_73">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_74">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_75">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_76">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_77">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_78">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_79">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_80">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_81">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_82">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_83">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_84">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_85">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_86">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_87">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_88">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_89">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_90">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_91">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_92">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_93">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_94">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_95">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_96">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_97">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_98">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_99">
+    <path d="M 122.840584 -1 
+L 122.955877 -0.94234 
+L 133.459407 0.465701 
+L 136.427466 -1 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_100">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_101">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_102">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_103">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_104">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_105">
+    <path d="M 164.969995 6.714563 
+L 175.473524 13.599277 
+L 185.977054 4.924336 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_106">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 1.85,0.8; stroke-dashoffset: 0; stroke: #808080; stroke-opacity: 0.5; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_107">
+    <path d="M 17.920583 4.329474 
+L 28.424113 4.329474 
+L 38.927642 4.329474 
+L 49.431171 4.329474 
+L 59.934701 4.329474 
+L 70.43823 4.329474 
+L 80.94176 4.329474 
+L 91.445289 4.329474 
+L 101.948818 4.329474 
+L 112.452348 4.329474 
+L 122.955877 4.329474 
+L 133.459407 4.329474 
+L 143.962936 4.329474 
+L 154.466465 4.329474 
+L 164.969995 4.329474 
+L 175.473524 4.329474 
+L 185.977054 4.329474 
+L 196.480583 4.329474 
+L 201.080583 4.329474 
+" clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 3.2,0.8,0.5,0.8; stroke-dashoffset: 0; stroke: #008000; stroke-width: 0.5"/>
+   </g>
+   <g id="line2d_108">
+    <path clip-path="url(#pdf7ed94ae1)" style="fill: none; stroke-dasharray: 3.2,0.8,0.5,0.8; stroke-dashoffset: 0; stroke: #008000; stroke-width: 0.5"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 17.920583 59.04 
+L 17.920583 3.6 
+" style="fill: none; stroke: #000000; stroke-width: 0.4; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 196.480583 59.04 
+L 196.480583 3.6 
+" style="fill: none; stroke: #000000; stroke-width: 0.4; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 17.920583 59.04 
+L 196.480583 59.04 
+" style="fill: none; stroke: #000000; stroke-width: 0.4; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 17.920583 3.6 
+L 196.480583 3.6 
+" style="fill: none; stroke: #000000; stroke-width: 0.4; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pdf7ed94ae1">
+   <rect x="17.920583" y="3.6" width="178.56" height="55.44"/>
+  </clipPath>
+ </defs>
+</svg>

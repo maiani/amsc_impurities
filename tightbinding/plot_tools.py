@@ -117,17 +117,15 @@ def complex_plot(x, y, z, ax=None, interpolation="gaussian"):
 # plt.show()
 
 
-def multiplot(x, ys, cs=None, ax=None, colormap="viridis", **kwargs):
+def multiplot(x, ys, cs, ax=None, **kwargs):
     """
     Plot multiple lines with smoothly changing colors.
 
     Parameters:
     - x        : (x_N,) array-like, x-axis values
     - ys       : (x_N, y_N) array-like, y-axis values for multiple lines
-    - cs   : (x_N, y_N, 4) array-like, RGBA colors for each point on the lines
-                 If None, colors are generated using the specified colormap.
-    - ax       : matplotlib axes to plot on. If None, uses the current axes.
-    - colormap : str, name of the colormap to use if colors are not provided
+    - cs       : (x_N, y_N, 4) array-like, RGBA colors for each point on the lines  
+    - ax       : matplotlib axes to plot on. If None, uses the current axes
     - **kwargs : additional arguments passed to LineCollection
 
     Returns:
@@ -146,14 +144,6 @@ def multiplot(x, ys, cs=None, ax=None, colormap="viridis", **kwargs):
     assert (
         x.shape[0] == ys.shape[0]
     ), "x and ys must have the same length in the first dimension."
-
-    if cs is None:
-        cs = np.zeros((x_N, y_N, 4))
-        cmap = plt.colormaps.get_cmap(colormap)
-        for i in range(y_N):
-            norm = plt.Normalize(vmin=0, vmax=x_N - 1)
-            sm = cm.ScalarMappable(cmap=cmap, norm=norm)
-            cs[:, i, :] = sm.to_rgba(np.linspace(0, x_N - 1, x_N))
 
     assert (
         ys.shape[:2] == cs.shape[:2] and cs.shape[2] == 4
