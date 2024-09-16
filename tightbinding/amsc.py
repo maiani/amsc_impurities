@@ -1,15 +1,8 @@
 import kwant
-import matplotlib as mpl
-import matplotlib.pyplot as plt
 import numpy as np
-import scipy.linalg as la
-import scipy.sparse as sp
-import scipy.sparse.linalg as sla
 from scipy.interpolate import RegularGridInterpolator
-from tqdm.notebook import tqdm
 
-from pauli import *
-from plot_tools import add_tl_label, complex_plot
+from pauli import t0sx, t0sy, t0sz, txs0, tys0, tzs0, tzsx, tzsy
 
 
 def bulk_amsc_system(Nx, Ny, t, t_so, t_am, V, Delta, theta, hx, hy, hz, periodic_bc):
@@ -215,8 +208,11 @@ def generate_intial_Delta(
     theta_interp = RegularGridInterpolator((y_ax, x_ax), np.angle(Psi_n))
 
     # Update the order parameter
-    Delta = lambda x, y: Delta_interp((y, x))
-    theta = lambda x, y: theta_interp((y, x))
+    def Delta(x, y):
+        return Delta_interp((y, x))
+
+    def theta(x, y):
+        return theta_interp((y, x))
 
     return Delta, theta
 
@@ -327,10 +323,17 @@ def setup_gaussian_impurities(
     hy_interp = RegularGridInterpolator((y_ax, x_ax), hy(x, y))
     hz_interp = RegularGridInterpolator((y_ax, x_ax), hz(x, y))
 
-    V = lambda x, y: V_interp((y, x))
-    hx = lambda x, y: hx_interp((y, x))
-    hy = lambda x, y: hy_interp((y, x))
-    hz = lambda x, y: hz_interp((y, x))
+    def V(x, y):
+        return V_interp((y, x))
+
+    def hx(x, y):
+        return hx_interp((y, x))
+
+    def hy(x, y):
+        return hy_interp((y, x))
+
+    def hz(x, y):
+        return hz_interp((y, x))
 
     return V, hx, hy, hz
 
@@ -375,7 +378,9 @@ def setup_Coulomb_impurities(x, y, mu, impurity_positions, V_imp, screening_leng
 
     # Create the new interpolation function
     V_interp = RegularGridInterpolator((y_ax, x_ax), V_grid)
-    V_func = lambda x, y: V_interp((y, x))
+
+    def V_func(x, y):
+        return V_interp((y, x))
 
     return V_func
 
@@ -465,8 +470,13 @@ def setup_spin_impurities(
     hy_interp = RegularGridInterpolator((y_ax, x_ax), hy(x, y))
     hz_interp = RegularGridInterpolator((y_ax, x_ax), hz(x, y))
 
-    hx = lambda x, y: hx_interp((y, x))
-    hy = lambda x, y: hy_interp((y, x))
-    hz = lambda x, y: hz_interp((y, x))
+    def hx(x, y):
+        return hx_interp((y, x))
+
+    def hy(x, y):
+        return hy_interp((y, x))
+
+    def hz(x, y):
+        return hz_interp((y, x))
 
     return hx, hy, hz

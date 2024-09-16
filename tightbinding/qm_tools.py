@@ -1,15 +1,9 @@
-import matplotlib.collections as mcoll
-import matplotlib.path as mpath
-import matplotlib.pyplot as plt
 import numpy as np
-import scipy.linalg as la
 import scipy.sparse as sp
 import scipy.sparse.linalg as sla
 from matplotlib.collections import LineCollection
 from scipy.optimize import linear_sum_assignment
-import numpy as np
 from scipy.interpolate import interp1d
-from typing import List, Optional, Sequence, Tuple, Union
 import mumps
 
 

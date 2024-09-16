@@ -1,12 +1,7 @@
 import numpy as np
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-from matplotlib.axes import Axes
-from matplotlib.figure import Figure
 from matplotlib.collections import LineCollection
-from matplotlib.image import AxesImage
 from numpy.typing import ArrayLike
-from typing import Tuple, Optional
 from colorsys import hls_to_rgb
 
 
@@ -124,7 +119,7 @@ def multiplot(x, ys, cs, ax=None, **kwargs):
     Parameters:
     - x        : (x_N,) array-like, x-axis values
     - ys       : (x_N, y_N) array-like, y-axis values for multiple lines
-    - cs       : (x_N, y_N, 4) array-like, RGBA colors for each point on the lines  
+    - cs       : (x_N, y_N, 4) array-like, RGBA colors for each point on the lines
     - ax       : matplotlib axes to plot on. If None, uses the current axes
     - **kwargs : additional arguments passed to LineCollection
 
