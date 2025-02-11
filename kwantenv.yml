@@ -1,0 +1,15 @@
+name: kwantenv
+channels: 
+  - conda-forge
+dependencies:
+  - python = 3.12
+  - ipykernel = 6.29
+  - ipywidgets = 8.1
+  - tqdm = 4.67
+  - numpy = 2.2
+  - scipy = 1.15
+  - sympy = 1.13
+  - matplotlib = 3.10
+  - plotly = 6.0
+  - python-mumps = 0.0.3
+  - kwant = 1.5
